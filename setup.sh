@@ -1,3 +1,4 @@
+#example: ./setup.sh password
 echo '(google-chrome --kiosk file:///home/$USER/grandPC/runOnBoot.html)&' >> ~/.profile
 echo '(while true; do' >> ~/.profile
 echo '	if [ -f /home/$USER/Downloads/turnoff.txt ]; then' >> ~/.profile
