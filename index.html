@@ -26,7 +26,7 @@ body {
   font-family: 'Helvetica Neue, Helvetica, Arial', sans-serif;
   font-style: normal;
   font-size: 26px;
-  color: #212121;
+  color: #fff;
   background-color: #f5f5f5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -1283,9 +1283,10 @@ body {
   }
 }
 
-</style></head><body>
+</style></head><body onload="startTime()">
+<center class="display-animation"><br/><div id="txt" style="color:black"></div></center><br/>
 <div class="dashboard display-animation" style="margin: 0 auto; width: 1130px;">
-  <a class="tile tile-lg tile-pink ripple-effect" href="run.html?link=vnexpress.vn">
+  <a class="tile tile-lg tile-pink ripple-effect" href="open_web.html?link=vnexpress.vn">
     <span class="content-wrapper">
       <span class="tile-content">
         <span class="tile-img" style=""></span>
@@ -1295,7 +1296,7 @@ body {
       </span>      
     </span>
   </a>
-  <a class="tile tile-lg tile-sqr tile-indigo ripple-effect" href="run.html?link=vtv.vn">
+  <a class="tile tile-lg tile-sqr tile-indigo ripple-effect" href="open_web.html?link=vtv.vn">
     <span class="content-wrapper">
       <span class="tile-content">
         <span class="tile-img" style=""></span>
@@ -1305,7 +1306,7 @@ body {
       </span>      
     </span>
   </a>
-  <a class="tile tile-lg tile-sqr tile-purple ripple-effect" href="run.html?link=vietnamnet.vn">
+  <a class="tile tile-lg tile-sqr tile-red ripple-effect" href="open_web.html?link=vietnamnet.vn">
     <span class="content-wrapper">
       <span class="tile-content">
         <span class="tile-img" style=""></span>
@@ -1315,17 +1316,7 @@ body {
       </span>      
     </span>
   </a>
-  <a class="tile tile-lg tile-sqr tile-light-blue ripple-effect" href="run.html?link=dantri.vn">
-    <span class="content-wrapper">
-      <span class="tile-content">
-        <span class="tile-img tile-img-bg" style=""></span>
-        <span class="tile-holder tile-holder-sm">
-          <span class="title">ĐỌC BÁO<br/>Dân Trí</span>
-        </span>
-      </span>      
-    </span>
-  </a>
-  <a class="tile tile-lg tile-sqr tile-red ripple-effect" href="run.html?link=tienphong.vn">
+  <a class="tile tile-lg tile-sqr tile-purple ripple-effect" href="open_web.html?link=tienphong.vn">
     <span class="content-wrapper">
       <span class="tile-content">
         <span class="tile-img" style=""></span>
@@ -1335,17 +1326,17 @@ body {
       </span>      
     </span>
   </a>
-  <a class="tile tile-lg tile-sqr tile-deep-orange ripple-effect" href="run.html?link=doisongphapluat.com">
+  <a class="tile tile-lg tile-deep-orange ripple-effect" href="chinese_chess.html">
     <span class="content-wrapper">
       <span class="tile-content">
-        <span class="tile-img" style=""></span>
+        <span class="tile-img tile-img-bg" style=""></span>
         <span class="tile-holder tile-holder-sm">
-          <span class="title">ĐỌC BÁO<br/>Đời sống pháp luật</span>
+          <span class="title">CHƠI TRÒ<br/>Cờ Tướng</span>
         </span>
       </span>      
     </span>
   </a>
-  <a class="tile tile-lg tile-sqr tile-light-green-reverse ripple-effect" href="javascript:dp();">
+  <a class="tile tile-lg tile-sqr tile-brown ripple-effect" href="turn_off.html">
     <span class="content-wrapper">
       <span class="tile-content">
         <span class="tile-img tile-img-bg" style=""></span>
@@ -1424,6 +1415,21 @@ function dp() {
     } else {
         alert('Your browser does not support the HTML5 Blob.');
     }
+}
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    "Bây giờ là: " + h + " giờ " + m + " phút";
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
 }
 //# sourceURL=pen.js
 </script>

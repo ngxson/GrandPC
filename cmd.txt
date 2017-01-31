@@ -1,8 +1,0 @@
-(google-chrome --kiosk file:///home/ngxson/grandPC/runOnBoot.html)&
-(while true; do
-	if [ -f /home/ngxson/Downloads/turnoff.txt ]; then
-		rm /home/ngxson/Downloads/turnoff.txt
-		echo 'khongaibiet' | sudo -S sync
-		echo 'khongaibiet' | sudo -S poweroff
-	fi
-done; sleep 5)&

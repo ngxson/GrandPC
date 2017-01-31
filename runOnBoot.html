@@ -281,12 +281,12 @@ body .loader_cogs__bottom div.bottom_hole {
 <script src='jquery.min.js'></script>
 <script>
 $(document).ready(function() {
-	$.ajaxPrefilter( function (options) {
+	/*$.ajaxPrefilter( function (options) {
 		if (options.crossDomain && jQuery.support.cors) {
 			var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
 			options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
 		}
-	});
+	});*/
 	setTimeout(function() {
 		$.ajax({
 			type: "GET",
@@ -299,7 +299,8 @@ $(document).ready(function() {
 			error: function (xhr, ajaxOptions, thrownError) {
 				fadeout(document.getElementById("cogs"), 800);
 				fadeout(document.getElementById("title2"), 800);
-				$('#title1').html("<br/>LỖI: KHÔNG THỂ KẾT NỐI<br/>TỚI MẠNG")
+				$('#title1').html("<br/>KHÔNG VÀO ĐƯỢC MẠNG<br/><br/>"+
+				"<a href=\"turn_off.html\">BẤM VÀO ĐÂY ĐỂ TẮT MÁY TÍNH</a>");
 			}
 		});
 	},3000);
