@@ -1,0 +1,70 @@
+
+<!DOCTYPE html><html class=''>
+<head>
+	<style>
+		body {
+			margin: 0 0;
+		}
+		#tabl {
+			height:100%; width:100%;
+			position: fixed;
+		}
+		button {
+			font-size: 1.1em;
+			background: white;
+			border-color:black;
+			border-style: solid;
+			border-width: 2px;
+		}
+		iframe {
+			border:none;
+		}
+	</style>
+</head>
+<body>
+<table id="tabl">
+	<tr>
+		<td><table align="center">
+			<tr>
+				<td><button onclick="nBack()">↤ Trở lại</button>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td><button onclick="nBackToMenu()">⛤ Về danh sách</button>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td><input id="addr"></input></td>
+				<td><button onclick="nGoToUrl()">⇒</button></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr height="92%">
+		<td><iframe src="" sandbox="allow-forms allow-same-origin allow-scripts" style="height:100%; width:100%" id="ifr">
+			<center><h1>Đợi một chút...</h1></center>
+		</iframe></td>
+	</tr>
+</table>
+<script>
+	function nBack() {
+		window.history.back();
+	}
+	
+	function nBackToMenu() {
+		window.location = "index.html";
+	}
+	
+	function nGoToUrl() {
+		document.getElementById("ifr").src= document.getElementById("addr").value;
+	}
+	
+	function getParameterByName(name) {
+		url = window.location.href;
+		name = name.replace(/[\[\]]/g, "\\$&");
+		var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+			results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, " "));
+	}
+	
+	setTimeout(function() {
+		document.getElementById("ifr").src = "http://"+getParameterByName("link");
+	}, 1000);
+</script>
+</body>
+</html>
