@@ -1286,7 +1286,17 @@ body {
 </style></head><body onload="startTime()">
 <center class="display-animation"><br/><div id="txt" style="color:black"></div></center><br/>
 <div class="dashboard display-animation" style="margin: 0 auto; width: 1130px;">
-  <a class="tile tile-lg tile-pink ripple-effect" href="open_web.html?link=vnexpress.vn">
+  <a class="tile tile-lg tile-sqr tile-teal ripple-effect" href="open_web.html?link=pda.vietbao.vn">
+    <span class="content-wrapper">
+      <span class="tile-content">
+        <span class="tile-img" style=""></span>
+        <span class="tile-holder tile-holder-sm">
+          <span class="title">ĐỌC BÁO<br/>Việt Báo</span>
+        </span>
+      </span>      
+    </span>
+  </a>
+  <a class="tile tile-lg tile-sqr tile-pink ripple-effect" href="open_web.html?link=vnexpress.vn">
     <span class="content-wrapper">
       <span class="tile-content">
         <span class="tile-img" style=""></span>
@@ -1352,15 +1362,17 @@ body {
 <script>(function ($) {
     var speed = 2000;
     var container = $('.display-animation');
-    container.each(function () {
-        var elements = $(this).children();
-        elements.each(function () {
-            var elementOffset = $(this).offset();
-            var offset = elementOffset.left * 0.8 + elementOffset.top;
-            var delay = parseFloat(offset / speed).toFixed(2);
-            $(this).css('-webkit-animation-delay', delay + 's').css('-o-animation-delay', delay + 's').css('animation-delay', delay + 's').addClass('animated');
-        });
-    });
+	setTimeout(function() {
+		container.each(function () {
+			var elements = $(this).children();
+			elements.each(function () {
+				var elementOffset = $(this).offset();
+				var offset = elementOffset.left * 0.8 + elementOffset.top;
+				var delay = parseFloat(offset / speed).toFixed(2);
+				$(this).css('-webkit-animation-delay', delay + 's').css('-o-animation-delay', delay + 's').css('animation-delay', delay + 's').addClass('animated');
+			});
+		});
+	}, 800);
 }(jQuery));
 (function ($) {
     $('.ripple-effect').click(function (e) {
