@@ -1,4 +1,6 @@
 #!/bin/sh
+dconf write /org/gnome/desktop/interface/cursor-size 32
+
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/google-chrome/Default/Preferences
 sed -i 's/"exit_type":"Crashed"/"exit_type":"None"/' ~/.config/google-chrome/Default/Preferences
 sed -i -e 's/("exit_type":\s*)"Crashed"/"exit_type":"None"/g' ~/.config/google-chrome/Default/Preferences
